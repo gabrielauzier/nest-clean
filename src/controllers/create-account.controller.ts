@@ -7,6 +7,8 @@ import {
 } from '@nestjs/common'
 import { PrismaService } from 'src/prisma/prisma.service'
 
+import { hash } from 'bcryptjs'
+
 interface CreateAccountDTO {
   name: string
   email: string
@@ -34,11 +36,13 @@ export class CreateAccountController {
       )
     }
 
+    const hashedPassword = await hash(password, 8)
+
     await this.prisma.user.create({
       data: {
         name,
         email,
-        password,
+        password: hashedPassword,
       },
     })
   }
