@@ -57,7 +57,9 @@ $ pnpm start:dev
 $ pnpm start:prod
 ```
 
-Inicie o modo studio do banco de dados (Opcional).
+ (Opcional) Instale a extensão Rest Client no seu VSCode. Assim, você pode testar as requisições no arquivo `client.http`
+
+ (Opcional) Inicie o modo studio do banco de dados.
 ```bash
 $ pnpm prisma studio
 ```
