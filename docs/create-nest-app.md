@@ -22,42 +22,52 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Descrição
+## Description
 
-Aplicação backend de estudos, feita durante o bootcamp Ignite da @rocketseat, utilizando o framework [Nest](https://github.com/nestjs/nest) com TypeScript.
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Instalação
+## Installation
 
-Instale as dependências de desenvolvimento.
 ```bash
 $ pnpm install
 ```
 
-## Execução
+## Running the app
 
-Suba o contâiner do banco de dados. 
-```bash
-$ docker-compose up
-```
-
-Atualize o banco de dados para a última versão.
-```bash
-$ pnpm prisma migrate dev
-```
-
-Inicie a aplicação em modo de desenvolvimento.
 ```bash
 # development
-$ pnpm start
+$ pnpm run start
 
 # watch mode
-$ pnpm start:dev
+$ pnpm run start:dev
 
 # production mode
-$ pnpm start:prod
+$ pnpm run start:prod
 ```
 
-Inicie o modo studio do banco de dados (Opcional).
+## Test
+
 ```bash
-$ pnpm prisma studio
+# unit tests
+$ pnpm run test
+
+# e2e tests
+$ pnpm run test:e2e
+
+# test coverage
+$ pnpm run test:cov
 ```
+
+## Support
+
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+
+## Stay in touch
+
+- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
+
+## License
+
+Nest is [MIT licensed](LICENSE).
