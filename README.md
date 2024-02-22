@@ -33,6 +33,29 @@ Instale as dependências de desenvolvimento.
 $ pnpm install
 ```
 
+## Configuração 
+
+O serviço de autenticação JWT desta aplicação utiliza o algoritmo de criptografia RSA-256 para a geração das chaves pública e privada.
+
+Veja abaixo como proceder para a geração e configuração das chaves em seu projeto, no Linux/MacOS.
+
+Execute o seguinte comando para gerar uma chave privada RSA de 2048 bits e salvá-la em um arquivo chamado `private_key.pem`:
+```bash
+$ openssl genpkey -algorithm RSA -out private_key.pem -pkeyopt rsa_keygen_bits:2048
+```
+
+Execute o seguinte comando para extrair a chave pública correspondente e salvá-la em um arquivo chamado `public_key.pem`:
+```bash
+$ openssl rsa -pubout -in private_key.pem -out public_key.pem
+```
+
+Com as chaves criadas, você deve convertê-las para um base64, capaz de ser utilizado no arquivo .env
+```bash
+$ base64 -w 0 private_key.pem > private_key_base64.txt
+
+$ base64 -w 0 public_key.pem > public_key_base64.txt
+```
+
 ## Execução
 
 Suba o contâiner do banco de dados. 
@@ -63,3 +86,4 @@ $ pnpm start:prod
 ```bash
 $ pnpm prisma studio
 ```
+
