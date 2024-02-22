@@ -22,68 +22,52 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Descrição
+## Description
 
-Aplicação backend de estudos, feita durante o bootcamp Ignite da @rocketseat, utilizando o framework [Nest](https://github.com/nestjs/nest) com TypeScript.
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Instalação
+## Installation
 
-Instale as dependências de desenvolvimento.
 ```bash
 $ pnpm install
 ```
 
-## Configuração 
+## Running the app
 
-O serviço de autenticação JWT desta aplicação utiliza o algoritmo de criptografia RSA-256 para a geração das chaves pública e privada.
-
-Veja abaixo como proceder para a geração e configuração das chaves em seu projeto, no Linux/MacOS.
-
-Execute o seguinte comando para gerar uma chave privada RSA de 2048 bits e salvá-la em um arquivo chamado `private_key.pem`:
-```bash
-$ openssl genpkey -algorithm RSA -out private_key.pem -pkeyopt rsa_keygen_bits:2048
-```
-
-Execute o seguinte comando para extrair a chave pública correspondente e salvá-la em um arquivo chamado `public_key.pem`:
-```bash
-$ openssl rsa -pubout -in private_key.pem -out public_key.pem
-```
-
-Com as chaves criadas, você deve convertê-las para um base64, capaz de ser utilizado no arquivo .env
-```bash
-$ base64 -w 0 private_key.pem > private_key_base64.txt
-
-$ base64 -w 0 public_key.pem > public_key_base64.txt
-```
-
-## Execução
-
-Suba o contâiner do banco de dados. 
-```bash
-$ docker-compose up
-```
-
-Atualize o banco de dados para a última versão.
-```bash
-$ pnpm prisma migrate dev
-```
-
-Inicie a aplicação em modo de desenvolvimento.
 ```bash
 # development
-$ pnpm start
+$ pnpm run start
 
 # watch mode
-$ pnpm start:dev
+$ pnpm run start:dev
 
 # production mode
-$ pnpm start:prod
+$ pnpm run start:prod
 ```
 
- (Opcional) Instale a extensão Rest Client no seu VSCode. Assim, você pode testar as requisições no arquivo `client.http`
+## Test
 
- (Opcional) Inicie o modo studio do banco de dados.
 ```bash
-$ pnpm prisma studio
+# unit tests
+$ pnpm run test
+
+# e2e tests
+$ pnpm run test:e2e
+
+# test coverage
+$ pnpm run test:cov
 ```
 
+## Support
+
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+
+## Stay in touch
+
+- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
+
+## License
+
+Nest is [MIT licensed](LICENSE).
